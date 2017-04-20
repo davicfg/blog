@@ -68,6 +68,18 @@
         $this->Flash->error(__('User was not deleted'));
         return $this->redirect(array('action' => 'index'));
     }
+    public function login(){
+        if($this->request->is('post')){
+            if($this->Auth->login()){
+                return $this->redirect($this->Auth->);
+            }
+            $this->Flash->erro(__('Invalid username or password ;(. Try again '))
+        }
+    }
+
+    public function logout(){
+        return $this->redirect($this->Auth->logout());
+    }
 
   }
 ?>
